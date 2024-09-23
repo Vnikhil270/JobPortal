@@ -15,7 +15,7 @@ export default async function JobsPage({ searchParams }) {
   };
 
   const res = await fetch(
-    `http://localhost:3000/api/jobs?page=${page}`,
+    `${process.env.NEXT_PUBLIC_BASE_URL}/api/jobs?page=${page}`,
     requestOptions
   );
   console.log(res.ok);

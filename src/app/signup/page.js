@@ -21,7 +21,7 @@ function SignIn() {
       password: password,
     };
     try {
-      const res = await axios.post("http://localhost:3000/api/signup", data, {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/signup`, data, {
         headers: {
           "Content-Type": "application/json",
         },

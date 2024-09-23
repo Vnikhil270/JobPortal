@@ -4,7 +4,6 @@ import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import { Box, Button, Snackbar } from "@mui/material";
 import axios from "axios";
-import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
 
 function SignIn() {
@@ -21,7 +20,7 @@ function SignIn() {
       password: password,
     };
     try {
-      const res = await axios.post("http://localhost:3000/api/signin", data, {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/signin`, data, {
         headers: {
           "Content-Type": "application/json",
         },
