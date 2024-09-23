@@ -66,12 +66,12 @@ function JobCategory() {
           </Grid2>
         </Grid2>
         <Box className="flex justify-center" mt={3}>
-          <Button
-            className="normal-case border-sky-500 rounded-full bg-[#0258f8] text-white px-7"
+          <button
+            className="normal-case border-sky-500 rounded-full bg-[#0258f8] text-white px-7 py-2"
             onClick={() => router.push("/jobs")}
           >
             Apply Now
-          </Button>
+          </button>
         </Box>
       </Container>
     </Box>

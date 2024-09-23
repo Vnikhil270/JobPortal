@@ -49,14 +49,14 @@ function Navbar() {
             {pathname === "/login" || pathname === "/signup" || !token ? (
               <div className="flex items-center gap-2">
                 <Link href="/login">
-                  <Button variant="outlined" className="normal-case">
+                  <button variant="outlined" className="normal-case px-3 py-2 rounded-md" style={{border:"1px solid rgb(219 219 219)"}}>
                     Login
-                  </Button>
+                  </button>
                 </Link>
                 <Link href="/signup">
-                  <Button className="bg-[#0258f8] hover:bg-[#0259e9] text-white normal-case">
+                  <button className="bg-[#0258f8] rounded-md hover:bg-[#0259e9] text-white normal-case px-3 py-2">
                     Signup
-                  </Button>
+                  </button>
                 </Link>
               </div>
             ) : (

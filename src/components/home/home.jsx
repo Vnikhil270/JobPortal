@@ -33,12 +33,12 @@ function HomePage() {
                 onChange={(e) => setQuery(e.target.value)}
                 className="outline-none border-none w-full"
               />
-              <Button
-                onClick={searchJobHandler}
-                className="rounded-r-full bg-[#4a59ce] hover:bg-[#0223f8]"
+              <button
+                // onClick={searchJobHandler}
+                className="rounded-r-full bg-[#4a59ce] hover:bg-[#0223f8] py-2 px-5"
               >
                 <SearchIcon className="h-5 w-5 text-[#fff]" />
-              </Button>
+              </button>
             </div>
           </div>
         </div>

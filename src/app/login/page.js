@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import GoogleIcon from "@mui/icons-material/Google";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { Box, Button, Snackbar } from "@mui/material";
+import { Box, Snackbar } from "@mui/material";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 
@@ -107,12 +107,12 @@ function SignIn() {
             </a>
           </Box>
 
-          <Button
+          <button
             type="submit"
             className="w-full normal-case py-2 px-4 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             Sign in
-          </Button>
+          </button>
         </form>
 
         <Box className="mt-6 flex items-center justify-center">
@@ -120,21 +120,21 @@ function SignIn() {
         </Box>
 
         <Box className="mt-4 flex justify-center gap-4">
-          <Button
-            type="Button"
+          <button
+            type="button"
             className="flex normal-case items-center gap-2 px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm text-gray-600 hover:bg-gray-100"
           >
             <GoogleIcon className="w-4 h-4" />
             Google
-          </Button>
+          </button>
 
-          <Button
-            type="Button"
+          <button
+            type="button"
             className="flex normal-case items-center gap-2 px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm text-gray-600 hover:bg-gray-100"
           >
             <GitHubIcon className="w-4 h-4" />
             GitHub
-          </Button>
+          </button>
         </Box>
       </Box>
 

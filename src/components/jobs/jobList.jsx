@@ -74,12 +74,12 @@ function JobList({ jobsData, totalPages, currentPage, totalJobs }) {
     const data = jobsData.filter((job) =>
       job.position.toLowerCase().includes(value.toLocaleLowerCase())
     );
-    if(value){
+    if (value) {
       setTotalJobCount(data.length);
       endIndex = Math.min(startIndex + itemsPerPage - 1, data.length);
-    }else{
-      console.log("here")
-      setTotalJobCount(totalJobs)
+    } else {
+      console.log("here");
+      setTotalJobCount(totalJobs);
     }
   };
 
@@ -99,13 +99,13 @@ function JobList({ jobsData, totalPages, currentPage, totalJobs }) {
                   onChange={(e) => handleSearchJob(e.target.value)}
                   className="outline-none border-none w-full"
                 />
-                <Button
+                <button
                   // onClick={searchJobHandler}
                   disabled
-                  className="rounded-r-full bg-[#4a59ce] hover:bg-[#0223f8]"
+                  className="rounded-r-full bg-[#4a59ce] hover:bg-[#0223f8] px-5 py-1"
                 >
                   <SearchIcon className="h-5 w-5 text-[#fff]" />
-                </Button>
+                </button>
               </div>
             </div>
           </div>
@@ -117,14 +117,9 @@ function JobList({ jobsData, totalPages, currentPage, totalJobs }) {
         </p>
         <Grid2 container spacing={4}>
           <Grid2 size={{ sm: 8, md: 8, xs: 8 }}>
-            <Typography
-              className="text-sm text-slate-500"
-              variant="h6"
-              align="right"
-              mt={2}
-            >
+            <p className="text-sm text-slate-500 text-right" mt={2}>
               Showing {startIndex}-{endIndex} out of {totalJobCount}
-            </Typography>
+            </p>
             {jobsData
               .filter((job) =>
                 searchjob
@@ -182,21 +177,33 @@ function JobList({ jobsData, totalPages, currentPage, totalJobs }) {
                               size="small"
                               filled
                               label={item.jobType}
-                              sx={{ fontSize: "12px" }}
+                              sx={{
+                                fontSize: "12px",
+                                color: "rgb(14 165 233)",
+                                background: "rgb(224 242 254)",
+                              }}
                             />
                             <Chip
                               className="job-type bg-sky-100 text-sky-500"
                               size="small"
                               filled
                               label={item.employmentType}
-                              sx={{ fontSize: "12px" }}
+                              sx={{
+                                fontSize: "12px",
+                                color: "rgb(14 165 233)",
+                                background: "rgb(224 242 254)",
+                              }}
                             />
                             <Chip
                               className="job-location bg-amber-100 text-amber-500"
                               size="small"
                               filled
                               label={item.workLocation}
-                              sx={{ fontSize: "12px" }}
+                              sx={{
+                                fontSize: "12px",
+                                color: "rgb(245 158 11)",
+                                background: "rgb(254 243 199)",
+                              }}
                             />
                           </Box>
                         </Box>
@@ -221,7 +228,11 @@ function JobList({ jobsData, totalPages, currentPage, totalJobs }) {
                           size="small"
                           filled
                           label={`+${item.skills.length - 4} more`}
-                          sx={{ fontSize: "12px" }}
+                          sx={{
+                            fontSize: "12px",
+                            color: "rgb(245 158 11)",
+                            background: "rgb(254 243 199)",
+                          }}
                         />
                       )}
                     </Box>

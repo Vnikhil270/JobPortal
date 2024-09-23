@@ -52,12 +52,12 @@ function JobDescription({
                   <p className="font-semibold text-2xl">{job.position}</p>
                 </Box>
                 <Box className="flex gap-2">
-                  <Button className="normal-case bg-[#4a59ce] text-white">
+                  <button className="normal-case bg-[#4a59ce] px-3 rounded-md text-white">
                     Apply Now
-                  </Button>
-                  <Button className="border-2 border-solid border-slate-100 ">
+                  </button>
+                  <button className="border-2 border-solid border-slate-100 p-2">
                     <BookmarkAddOutlinedIcon />
-                  </Button>
+                  </button>
                 </Box>
               </Box>
               <Box className="flex gap-2" mt={3}>
@@ -81,16 +81,31 @@ function JobDescription({
                       className="bg-sky-100 text-sky-500"
                       label={job.jobType}
                       size="small"
+                      sx={{
+                        fontSize: "12px",
+                        color: "rgb(14 165 233)",
+                        background: "rgb(224 242 254)",
+                      }}
                     />
                     <Chip
                       className="bg-sky-100 text-sky-500"
                       label={job.employmentType}
                       size="small"
+                      sx={{
+                        fontSize: "12px",
+                        color: "rgb(14 165 233)",
+                        background: "rgb(224 242 254)",
+                      }}
                     />
                     <Chip
                       className="bg-amber-100 text-amber-500"
                       label={job.workLocation}
                       size="small"
+                      sx={{
+                        fontSize: "12px",
+                        color: "rgb(245 158 11)",
+                        background: "rgb(254 243 199)",
+                      }}
                     />
                     <Chip
                       className="text-slate-500"
@@ -116,7 +131,7 @@ function JobDescription({
                 <Box mt={3}>
                   <p className="font-semibold">Responsibility</p>
                   <ul className="mt-3 text-sm list-disc ml-5 text-slate-500">
-                  {job?.jobResponsibility?.map((item, key) => {
+                    {job?.jobResponsibility?.map((item, key) => {
                       return <li key={key}>{item}</li>;
                     })}
                   </ul>
@@ -130,7 +145,9 @@ function JobDescription({
                 <p className="text-sm font-semibold text-slate-700">
                   About Company :-
                 </p>
-                <p className="text-sm mt-3 text-slate-600">{job.aboutCompany}</p>
+                <p className="text-sm mt-3 text-slate-600">
+                  {job.aboutCompany}
+                </p>
               </Box>
             </Grid2>
             <Grid2 item size={{ sm: 4, xs: 4, md: 4 }}>
@@ -138,96 +155,116 @@ function JobDescription({
                 More Similar jobs
               </p>
               {jobsData?.map((item, key) => {
-              return (
-                <Card
-                  sx={{ mt: 2 }}
-                  className="p-6 cursor-pointer"
-                  key={key}
-                  onClick={() => handleJobSelected(item)}
-                >
-                  <Box className="flex justify-between">
-                    <Box className="flex">
-                      <Box>
-                        <Image
-                          src={companyLogo}
-                          width={100}
-                          height={100}
-                          alt="company-logo"
-                        />
-                      </Box>
-                      <Box>
-                        <p className="company-Name text-sm text-[#0258f8]">
-                          {item.companyName}
-                        </p>
-                        <p className="position font-semibold my-1">
-                          {item.position}
-                        </p>
-                        <Box className="flex gap-3">
-                          <p className="inline-block text-xs text-slate-500 align-middle">
-                            <LocationOnIcon
-                              sx={{ width: "15px", height: "15px" }}
-                            />
-                            {item.location}
-                          </p>
-                          <p className="inline-block text-xs text-slate-500 align-middle">
-                            <CalendarMonthIcon
-                              sx={{ width: "15px", height: "15px", mr: "2px" }}
-                            />
-                            2 Days ago
-                          </p>
-                        </Box>
-                        <Box className="flex gap-2 mt-3">
-                          <Chip
-                            className="job-type bg-sky-100 text-sky-500"
-                            size="small"
-                            filled
-                            label={item.jobType}
-                            sx={{ fontSize: "12px" }}
-                          />
-                          <Chip
-                            className="job-type bg-sky-100 text-sky-500"
-                            size="small"
-                            filled
-                            label={item.employmentType}
-                            sx={{ fontSize: "12px" }}
-                          />
-                          <Chip
-                            className="job-location bg-amber-100 text-amber-500"
-                            size="small"
-                            filled
-                            label={item.workLocation}
-                            sx={{ fontSize: "12px" }}
+                return (
+                  <Card
+                    sx={{ mt: 2 }}
+                    className="p-6 cursor-pointer"
+                    key={key}
+                    onClick={() => handleJobSelected(item)}
+                  >
+                    <Box className="flex justify-between">
+                      <Box className="flex">
+                        <Box>
+                          <Image
+                            src={companyLogo}
+                            width={100}
+                            height={100}
+                            alt="company-logo"
                           />
                         </Box>
+                        <Box>
+                          <p className="company-Name text-sm text-[#0258f8]">
+                            {item.companyName}
+                          </p>
+                          <p className="position font-semibold my-1">
+                            {item.position}
+                          </p>
+                          <Box className="flex gap-3">
+                            <p className="inline-block text-xs text-slate-500 align-middle">
+                              <LocationOnIcon
+                                sx={{ width: "15px", height: "15px" }}
+                              />
+                              {item.location}
+                            </p>
+                            <p className="inline-block text-xs text-slate-500 align-middle">
+                              <CalendarMonthIcon
+                                sx={{
+                                  width: "15px",
+                                  height: "15px",
+                                  mr: "2px",
+                                }}
+                              />
+                              2 Days ago
+                            </p>
+                          </Box>
+                          <Box className="flex gap-2 mt-3">
+                            <Chip
+                              className="job-type bg-sky-100 text-sky-500"
+                              size="small"
+                              filled
+                              label={item.jobType}
+                              sx={{
+                                fontSize: "12px",
+                                color: "rgb(14 165 233)",
+                                background: "rgb(224 242 254)",
+                              }}
+                            />
+                            <Chip
+                              className="job-type bg-sky-100 text-sky-500"
+                              size="small"
+                              filled
+                              label={item.employmentType}
+                              sx={{
+                                fontSize: "12px",
+                                color: "rgb(14 165 233)",
+                                background: "rgb(224 242 254)",
+                              }}
+                            />
+                            <Chip
+                              className="job-location bg-amber-100 text-amber-500"
+                              size="small"
+                              filled
+                              label={item.workLocation}
+                              sx={{
+                                fontSize: "12px",
+                                color: "rgb(245 158 11)",
+                                background: "rgb(254 243 199)",
+                              }}
+                            />
+                          </Box>
+                        </Box>
                       </Box>
+                      <BookmarkAddOutlinedIcon />
                     </Box>
-                    <BookmarkAddOutlinedIcon />
-                  </Box>
-                  <Divider sx={{ marginTop: "15px" }} />
-                  <Box mt={2} className="flex item-center items-center">
-                    <p className="text-xs font-semibold">Skills :- &nbsp;</p>
-                    {item.skills.slice(0, 3).map((skill, index) => (
-                      <>
-                        <span key={index} className="text-xs">
-                          {skill}
-                          {index < 2 && ",  "}
-                        </span>
-                        <span>&nbsp;</span>
-                      </>
-                    ))}
-                    {item.skills.length > 3 && (
-                      <Chip
-                        className="job-location bg-amber-100 text-amber-500"
-                        size="small"
-                        filled
-                        label={`+${item.skills.length - 3} more`}
-                        sx={{ fontSize: "12px" }}
-                      />
-                    )}
-                  </Box>
-                </Card>
-              );
-            })}
+                    <Divider sx={{ marginTop: "15px" }} />
+                    <Box mt={2} className="flex item-center items-center">
+                      <p className="text-xs font-semibold">Skills :- &nbsp;</p>
+                      {item.skills.slice(0, 3).map((skill, index) => (
+                        <>
+                          <span key={index} className="text-xs">
+                            {skill}
+                            {index < 2 && ",  "}
+                          </span>
+                          <span>&nbsp;</span>
+                        </>
+                      ))}
+                      {item.skills.length > 3 && (
+                        <Chip
+                          className="job-location bg-amber-100 text-amber-500"
+                          size="small"
+                          filled
+                          label={`+${item.skills.length - 3} more`}
+                          sx={{
+                            fontSize: "12px",
+                            color: "rgb(245 158 11)",
+                            background: "rgb(254 243 199)",
+                          }}
+                        />
+                      )}
+                    </Box>
+                  </Card>
+                );
+              })}
             </Grid2>
           </Grid2>
         </Container>
