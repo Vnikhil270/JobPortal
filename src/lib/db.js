@@ -1,0 +1,2 @@
+const {userName, password, database} = process.env;
+export const connectionStr="mongodb+srv://"+userName+":"+password+"@cluster0.qcgjv.mongodb.net/"+database+"?retryWrites=true&w=majority&appName=Cluster0"
